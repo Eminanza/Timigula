@@ -1,5 +1,10 @@
 # How to use Timigula
 
+### Get the code from GitHub
+
+In the directory of your choice
+
+    git clone https://github.com/Eminanza/Timigula.git
 
 ### Install all dependencies contained in the package.json
 
