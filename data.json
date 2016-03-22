@@ -1,0 +1,106 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Global"
+    },
+    {
+      "id": 2,
+      "name": "Development"
+    },
+    {
+      "id": 3,
+      "name": "Documents"
+    },
+    {
+      "id": 4,
+      "name": "Tools"
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": 1,
+      "name": "Restaurant Marais",
+      "url": "http://b2e.group.echonet/pid59561/.html",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "name": "Clarity v13",
+      "url": "https://i-net1026a-prod.be.fortis.bank:51129/niku/nu",
+      "category": 1
+    },
+    {
+      "id": 3,
+      "name": "Installation Engine",
+      "url": "http://spdw0161:52126",
+      "category": 2
+    },
+    {
+      "id": 4,
+      "name": "Sametime",
+      "url": "https://webchat.group.echonet/stwebclient/index.jsp",
+      "category": 2
+    },
+    {
+      "id": 5,
+      "name": "Holiday sheet",
+      "url": "https://team-collab.sp.e-employee.net/sites/ITSDSDistribdm/DBRM%20Private/Holiday%20Sheet%202015/Holidays2015.xlsm",
+      "category": 3
+    },
+    {
+      "id": 6,
+      "name": "Sharepoint site",
+      "url": "https://team-collab.sp.e-employee.net/sites/ITSDSDistribdm/default.aspx",
+      "category": 3
+    },
+    {
+      "id": 7,
+      "name": "HR My Absences",
+      "url": "https://i-net800.be.fortis.bank/PLABJ01/PLAB/ssw/fortis/main.htm",
+      "category": 4
+    },
+    {
+      "id": 8,
+      "name": "HR My Time Management",
+      "url": "https://i-net800.be.fortis.bank/PLETJ01/PLET/apps/timeClockin/main.htm",
+      "category": 4
+    },
+    {
+      "id": 9,
+      "name": "EchoNet",
+      "url": "http://b2e.group.echonet",
+      "category": 1
+    },
+    {
+      "id": 10,
+      "name": "Phonebook",
+      "url": "http://i-net.be.fortis.bank/appurls/phonebook.asp",
+      "category": 1
+    },
+    {
+      "id": 11,
+      "name": "Citrix",
+      "url": "http://i-net928-prod.be.fortis.bank/XenApp/auth/login.aspx",
+      "category": 1
+    },
+    {
+      "id": 12,
+      "name": "Helpdesk",
+      "url": "http://i-net-aab.be.fortis.bank/echonet.asp?center=/se-k-fxli/SOS/SOS_Helpdesks_fr.htm",
+      "category": 1
+    },
+    {
+      "id": 13,
+      "name": "Meeting Room Filter",
+      "url": "http://i-net022-prod.be.fortis.bank/se-k-inoa/Classes/Viewers/reportViewer.asp?filter=INOA_MEET_FILTER&amp;report=INOA_MEET_REPORT&amp;dispreport=true&amp;showtitle=0",
+      "category": 1
+    },
+    {
+      "id": 14,
+      "name": "Meeting rooms - AROMA",
+      "url": "http://b2e.group.echonet/pid44726-lid1/Meeting-room-catering.html",
+      "category": 1
+    }
+  ]
+}
