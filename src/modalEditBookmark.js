@@ -17,7 +17,7 @@ var ModalEditBookmark = React.createClass({
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <button className="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <button className="close" id="btnCloseModalEditBookmarkX" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 className="modal-title">Add a bookmark</h4>
             </div>
             <div className="modal-body">
@@ -32,12 +32,12 @@ var ModalEditBookmark = React.createClass({
                 <input className="form-control" type="text" id="txtBookmarkUrl" aria-describedby="sizing-addon2"/>
               </div>
               <br/>
-              <div className="input-group">    
-                <span className="input-group-addon" id="sizing-addon2">Category</span>                                        
-                <input className="form-control" type="textbox" id="ddBookmarkCategoryName"></input>
+              <div className="input-group"> 
+                <span className="input-group-addon" id="sizing-addon2">Category</span>   
+                <input className="form-control" type="text" id="ddBookmarkCategoryName" disabled></input>
                 <input type="hidden" id="hidBookmarkCategoryId"></input>
                 <div className="input-group-btn">
-                    <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" className="btn btn-default dropdown-toggle" id="btnCategoriesList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <span className="caret"></span>
                     </button>
                     <ul id="categoriesList" className="dropdown-menu dropdown-menu-right">
@@ -47,8 +47,8 @@ var ModalEditBookmark = React.createClass({
               </div>             
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" onClick={this.props.onSave}>Save changes</button>
+              <button type="button" className="btn btn-default" id="btnCloseModalEditBookmark" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary" id="btnSaveModalEditBookmark" onClick={this.props.onSave}>Save changes</button>
             </div>
           </div>
         </div>

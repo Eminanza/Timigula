@@ -7,7 +7,7 @@ var ModalEditCategory = React.createClass({
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <button className="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <button className="close" id="btnCloseModalEditCategoryX" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 className="modal-title">Add a category</h4>
             </div>
             <div className="modal-body">
@@ -18,8 +18,8 @@ var ModalEditCategory = React.createClass({
               </div>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" onClick={this.props.onSave}>Save changes</button>
+              <button type="button" className="btn btn-default" id="btnCloseModalEditCategory" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary" id="btnSaveModalEditCategory" onClick={this.props.onSave}>Save changes</button>
             </div>
           </div>
         </div>

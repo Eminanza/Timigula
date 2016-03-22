@@ -6,6 +6,10 @@
   color : #7081FF !important;
 }
 
+.light {
+  color : #DDDDDD !important;
+}
+
 .nowrap {
   white-space:nowrap;
 }
