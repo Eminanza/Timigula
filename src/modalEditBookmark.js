@@ -9,7 +9,7 @@ var ModalEditBookmark = React.createClass({
   render: function() {
     var categoriesList = [];
     for (var i = 0; i <= this.props.categories.length - 1; i++) {
-      categoriesList.push(<li key={"categoriesList" + i} onClick={this.handleCategoriesListClick.bind(this,this.props.categories[i])}><a href="#">{this.props.categories[i].name}</a></li>);
+      categoriesList.push(<li key={"categoriesList" + i} onClick={this.handleCategoriesListClick.bind(this,this.props.categories[i])}><a href="#" id={"categoryLink" + i}>{this.props.categories[i].name}</a></li>);
     }
 
     return(
