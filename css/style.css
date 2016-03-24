@@ -1,0 +1,35 @@
+/*----------------*/
+/*OWN CLASSES     */
+/*----------------*/
+
+.brand {
+  color : #7081FF !important;
+}
+
+.light {
+  color : #DDDDDD !important;
+}
+
+.nowrap {
+  white-space:nowrap;
+}
+
+input[disabled] {
+    cursor: default !important;
+}
+
+/*----------------*/
+/*BOOTSTRAP CUSTOM*/
+/*----------------*/
+
+.navbar-right-marged {
+  margin-right : 0px !important;
+}
+
+.under-navbar {
+  margin-top : 60px;
+}
+
+.group-fixed {
+  width : 70px;
+}
