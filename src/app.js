@@ -62,15 +62,6 @@ var App = React.createClass({
   },
 
   handleDeleteBookmark: function(bookmark) {
-     // $.ajax({
-     //    type: "DELETE",
-     //    url: "http://localhost:5000/bookmarks/" + bookmark.id,
-
-     //    success: function(data) {
-     //      this.loadBookmarks();
-     //    }.bind(this)
-     //  });
-
      // Delete the bookmark in memory
      for (var i = data.bookmarks.length - 1; i >= 0; i--) {
        if (data.bookmarks[i].id === bookmark.id)
