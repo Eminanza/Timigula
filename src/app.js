@@ -8,6 +8,8 @@ var Categories = require('./categories.js').Categories;
 var ModalEditBookmark = require('./modalEditBookmark.js').ModalEditBookmark;
 var ModalEditCategory = require('./modalEditCategory.js').ModalEditCategory;
 
+var data = require('./data.json');
+
 
 var App = React.createClass({
   getInitialState: function() {
@@ -15,21 +17,11 @@ var App = React.createClass({
   },
 
   loadBookmarks : function() {
-    $.get({
-      url: "http://localhost:5000/bookmarks",
-      success: function(data) {
-        this.setState({bookmarks: data});
-      }.bind(this) //bind(this) because this.setState must use the Stocks object (so it recontextes the function(data) that would otherwise run with the jquery context, not Stocks)
-    });
+    this.setState({bookmarks: data.bookmarks});
   },
 
   loadCategories : function() {
-    $.get({
-      url: "http://localhost:5000/categories",
-      success: function(data) {
-        this.setState({categories: data});
-      }.bind(this) //bind(this) because this.setState must use the Stocks object (so it recontextes the function(data) that would otherwise run with the jquery context, not Stocks)
-    });
+    this.setState({categories: data.categories});
   },
 
   componentDidMount: function() {
@@ -59,14 +51,14 @@ var App = React.createClass({
   },
 
   handleDeleteBookmark: function(bookmark) {
-     $.ajax({
-        type: "DELETE",
-        url: "http://localhost:5000/bookmarks/" + bookmark.id,
-
-        success: function(data) {
-          this.loadBookmarks();
-        }.bind(this)
-      });
+     // Delete the bookmark in memory
+     for (var i = data.bookmarks.length - 1; i >= 0; i--) {
+       if (data.bookmarks[i].id === bookmark.id)
+       {
+          data.bookmarks.splice(i,1);
+       }
+     }
+     this.loadBookmarks();
   },
 
   handleAddBookmark: function() {
@@ -85,10 +77,10 @@ var App = React.createClass({
     var modalEditBookmark = $("#modalEditBookmark");
     modalEditBookmark.modal("hide");
 
-    var id = $('#hidBookmarkId').val();
+    var id = Number($('#hidBookmarkId').val());
     var name = $('#txtBookmarkName').val();
     var url = $('#txtBookmarkUrl').val();
-    var category = $('#hidBookmarkCategoryId').val();
+    var category = Number($('#hidBookmarkCategoryId').val());
 
     var bookmark = {
       id: id,
@@ -101,24 +93,35 @@ var App = React.createClass({
     if (bookmark.id)
     {
       // Modify an existing one
-      $.ajax({
-        type: "PUT",
-        url: "http://localhost:5000/bookmarks/" + bookmark.id,
-        data: bookmark,
-        success: function(data) {
-           this.loadBookmarks();
-        }.bind(this)
-      });
+     for (var i = data.bookmarks.length - 1; i >= 0; i--) {
+       if (data.bookmarks[i].id === bookmark.id)
+       {
+          data.bookmarks[i].name = bookmark.name;
+          data.bookmarks[i].url = bookmark.url;
+          data.bookmarks[i].category = bookmark.category;
+       }
+     }
+     this.loadBookmarks();
     }else
     {
       // Add a new one
-      $.post({
-        url: "http://localhost:5000/bookmarks",
-        data: bookmark,
-        success: function(data) {
-           this.loadBookmarks();
-        }.bind(this)
-      });
+
+      //Get a new id based on the max id in bookmarks
+      var maxId = 0;
+      for (var i = data.bookmarks.length - 1; i >= 0; i--) {
+        if (data.bookmarks[i].id > maxId) {
+          maxId = data.bookmarks[i].id;
+        }
+      }
+      maxId += 1;
+
+      // Set the id of the new bookmark to our new computed id
+      bookmark.id = maxId;
+
+      // Add the bookmark to the list
+      data.bookmarks.push(bookmark);
+
+      this.loadBookmarks();
     }
   },
 
@@ -126,7 +129,7 @@ var App = React.createClass({
     var modalEditCategory = $("#modalEditCategory");
     modalEditCategory.modal("hide");
 
-    var id = $('#hidCategoryId').val();
+    var id = Number($('#hidCategoryId').val());
     var name = $('#txtCategoryName').val();
 
     var category = {
@@ -138,24 +141,34 @@ var App = React.createClass({
     if (category.id) 
     {
       // Modify an existing one
-      $.ajax({
-        type: "PUT",
-        url: "http://localhost:5000/categories/" + category.id,
-        data: category,
-        success: function(data) {
-           this.loadCategories();
-        }.bind(this)
-      });
+     for (var i = data.categories.length - 1; i >= 0; i--) {
+       if (data.categories[i].id === category.id)
+       {
+          data.categories[i].name = category.name;
+       }
+     }
+     this.loadCategories();
+
     }else
     {
       // Add a new one
-      $.post({
-        url: "http://localhost:5000/categories",
-        data: category,
-        success: function(data) {
-           this.loadCategories();
-        }.bind(this)
-      });    
+
+      //Get a new id based on the max id in bookmarks
+      var maxId = 0;
+      for (var i = data.categories.length - 1; i >= 0; i--) {
+        if (data.categories[i].id > maxId) {
+          maxId = data.categories[i].id;
+        }
+      }
+      maxId += 1;
+
+      // Set the id of the new bookmark to our new computed id
+      category.id = maxId;
+
+      // Add the bookmark to the list
+      data.categories.push(category);
+
+      this.loadCategories(); 
     }
   },
 
