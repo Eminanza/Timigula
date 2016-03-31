@@ -18,7 +18,7 @@ var Bookmark = React.createClass({
   render: function() {
     return(
       <tr>
-        <td className="nowrap"><span id={"bookmarkName" + this.props.bookmark.id}>{this.props.bookmark.name}<span/></td>
+        <td className="nowrap"><span id={"bookmarkName" + this.props.bookmark.id}>{this.props.bookmark.name}</span></td>
         <td><small><a id={"bookmark" + this.props.bookmark.id} href={this.props.bookmark.url}>{this.props.bookmark.url}</a></small></td>
         <td>
           <div className="btn-group group-fixed">
