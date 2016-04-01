@@ -7,7 +7,7 @@ var Footer = React.createClass({
         <div className="container-fluid">
           <ul className="nav navbar-nav">
             <li>
-              <a href="#">(c) 2016 Timigula - Test</a>
+              <a href="#">(c) 2016 Timigula</a>
             </li>
           </ul>
 
